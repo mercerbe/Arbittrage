@@ -1,7 +1,7 @@
 html {
   height: 100%;
   overflow-x: hidden;
-
+  box-sizing: border-box;
 }
 
 *, *:before, *:after, {
@@ -14,11 +14,14 @@ body {
   box-sizing: inherit;
   position: relative;
   margin-bottom: 371px;
-  background-color: rgb(244,243,243);
+  background-color: rgb(233,236,239);
 }
 
 .jumbotron {
   color: white;
+  margin-bottom: 0;
+  border-bottom: 2px solid rgb(116,230,85);
+  z-index: 1;
 }
 
 .navbar {
@@ -28,6 +31,44 @@ body {
 .navbar-brand {
   color: white;
   margin-left: 15px;
+}
+
+.navbar-toggler {
+
+}
+.main {
+  padding: 0px 10px;
+  margin-left: 160px;
+}
+
+.sidenav {
+    width: 130px;
+    position: absolute;
+    top: 350px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+    border: 2px solid rgb(116,230,85);
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav p {
+    padding: 6px 8px 6px 16px;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
 }
 
 .modal-header {
@@ -46,6 +87,15 @@ body {
   margin-right: auto;
 }
 
+#filters {
+  background-color: rgb(192,192,182);
+  width:25%
+}
+
+.main {
+}
+/*coin blocks*/
+
 .footerh5 {
   color: rgb(48,180,112)
 }
@@ -62,7 +112,7 @@ body {
   text-align: center;
   background-color: rgba(12,12,37,1.0);
   padding: 3% 0% 3% 0%;
-  z-index: 101;
+  z-index: 1;
 }
 
 
@@ -70,6 +120,10 @@ body {
   #footer {
     bottom: -500px;
   }
+  .sidenav {
+    padding-top: 15px;}
+  .sidenav a {
+    font-size: 18px;}
 
 
 }
