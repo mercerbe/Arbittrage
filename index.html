@@ -9,7 +9,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="assets/css/visual.css">
-<link rel="stylesheet" href="assets/css/master.css">
+<link rel="stylesheet" href="assets/css/coinpagestyle.css">
 <!--auth for firebase-->
 <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
 <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
@@ -20,108 +20,117 @@
   <title>Arbittrage.com ($12/yr)</title>
 </head>
 <body>
+  <div class="wrapper">
 
-  <!--navbar-->
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <img id="navimg" src="assets/images/navbrand.png" alt="brand" width="40px">
-    <a class="navbar-brand" href="#">Arbittrage</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#" id="btnShowModal">Log In/Sign Up</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#" id="btnLogout">Log Out</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <!--modal-->
-  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="signIn">Sign In</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p class="text-center">Log In or Sign Up To Add Trains To The FireBase Railways Schedule!</p>
-          <img id="modalImg" src="https://media.giphy.com/media/oMci3puMA09aM/200w_d.gif" alt="gif">
-          <form>
-           <div class="form-group">
-             <label for="exampleInputEmail1">Email address</label>
-             <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
-           </div>
-           <div class="form-group">
-             <label for="exampleInputPassword1">Password</label>
-             <input type="password" class="form-control" id="txtPass" placeholder="Password">
-           </div>
-           <button class="btn btn-action btn-dark" id="btnLogin">Log In</button>
-           <button class="btn btn-secondary btn-dark" id="btnSignup">Sign Up</button>
-          </form>
-        </div>
+<!--navbar-->
+<nav class="navbar navbar-expand-lg">
+  <img src="assets/images/navbrand.png" alt="brand" width="40px">
+  <a class="navbar-brand" href="#">Arbittrage</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="btnShowModal">Log In/Sign Up</button>
+      </li>
+      <li class="nav-item active">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogout">Log Out</button>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<!--jumbotron-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Arbittrage</h1>
+    <p class="lead">Cryptocurrency Prices Across Multiple Exchanges</p>
+  </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signIn">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center">Log In or Sign Up To Save Your Coins</p>
+        <img id="modalImg" src="https://media.giphy.com/media/oMci3puMA09aM/200w_d.gif" alt="gif">
+        <form>
+         <div class="form-group">
+           <label for="exampleInputEmail1">Email address</label>
+           <input type="email" class="form-control" id="txtEmail" aria-describedby="emailHelp" placeholder="Enter email">
+         </div>
+         <div class="form-group">
+           <label for="exampleInputPassword1">Password</label>
+           <input type="password" class="form-control" id="txtPass" placeholder="Password">
+         </div>
+         <button class="btn btn-action btn-dark" id="btnLogin">Log In</button>
+         <button class="btn btn-secondary btn-dark" id="btnSignup">Sign Up</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
 <!--sidebar filter-->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
 
 
 
-
-
-
-
-
-  <!--footer-->
-  <section id="footer">
-    <div class="container-fluid">
-      <div class="row text-center text-xs-center text-sm-center text-md-left">
-        <div class="col-xs-12 col-sm-12 col-md-3">
-          <h5>Quick Links</h5>
-          <ul class="list-unstyled quick-links">
-            <li><a class="links" href="https://arbittrage.com/"><i class="fa fa-angle-double-right links"></i>Home</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>About</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Contact</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Github Repos</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>FAQ</a></li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5">
-          <ul class="list-unstyled list-inline text-center">
-            <p>Connect With Us:</p>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/facebook.png" /></a></li>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/twitter.png" /></a></li>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/linkedin.png" /></a></li>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/plus.png" /></a></li>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/github.png" /></a></li>
-            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/instagram.png" /></a></li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 text-md-right text-sm-center text-xs-center">
-          <h5>Other Resources</h5>
-          <ul class="list-unstyled quick-links">
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Advertise</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Crypto Resources</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>CoinDesk</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>CoinMarketCap</a></li>
-            <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Coin API</a></li>
-          </ul>
+    <!--footer-->
+    <section id="footer">
+      <div class="container-fluid">
+        <div class="row text-center text-xs-center text-sm-center text-md-left">
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <h5 class="footerh5">Quick Links</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a class="links" href="https://arbittrage.com/"><i class="fa fa-angle-double-right links"></i>Home</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>About</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Contact</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Github Repos</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>FAQ</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5">
+            <ul class="list-unstyled list-inline text-center">
+              <h5 class="footerh5">Connect With Us:</h5>
+              <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/facebook.png" /></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/twitter.png" /></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/linkedin.png" /></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/plus.png" /></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/github.png" /></a></li>
+              <li class="list-inline-item"><a href="javascript:void();" target="_blank"><img width="35px" src="assets/images/instagram.png" /></a></li>
+            </ul>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3 text-md-right text-sm-center text-xs-center">
+            <h5 class="footerh5">Other Resources</h5>
+            <ul class="list-unstyled quick-links">
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Advertise</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Crypto Resources</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>CoinDesk</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>CoinMarketCap</a></li>
+              <li><a class="links" href="javascript:void();"><i class="fa fa-angle-double-right links"></i>Coin API</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+      <p class="h6 copy">&copyArbittrage</p>
+    </section>
     </div>
-    <p class="h6 copy">&copyArbittrage</p>
-  </section>
-
   <!--scripts-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

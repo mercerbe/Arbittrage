@@ -1,7 +1,7 @@
 html {
   height: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
+
 }
 
 *, *:before, *:after, {
@@ -17,8 +17,26 @@ body {
   background-color: rgb(244,243,243);
 }
 
+.jumbotron {
+  color: white;
+}
+
 .navbar {
-  background-color: rgba(35,31,32,0.8);
+  background-color: rgba(12,12,37,1.0);
+}
+
+.navbar-brand {
+  color: white;
+  margin-left: 15px;
+}
+
+.modal-header {
+  background-color: rgba(12,12,37,1.0);
+  color: white;
+}
+
+.modal-body {
+  background-color: rgb(230,234,237);
 }
 
 #modalImg {
@@ -28,17 +46,25 @@ body {
   margin-right: auto;
 }
 
+.footerh5 {
+  color: rgb(48,180,112)
+}
+
+.links {
+  color: white;
+}
+
 #footer {
-  font-family: 'Raleway', Arial, sans-serif;
   bottom: -300px;
   color: rgb(244,243,243);
   width:100%;
   position: absolute;
   text-align: center;
-  background-color: rgb(52,58,64);
+  background-color: rgba(12,12,37,1.0);
   padding: 3% 0% 3% 0%;
-  background-color: rgba(35,31,32,0.8);
+  z-index: 101;
 }
+
 
 @media (max-width: 480px) {
   #footer {

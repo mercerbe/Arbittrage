@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //backstretch
-$(".jumbotron").backstretch("https://media.giphy.com/media/eIsBJSrlx7VBK/source.gif");
+$(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
 //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
 
 //initialize firebase (need new database here)
@@ -52,8 +52,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     $("#modal").modal('hide');
   } else {
     console.log("not logged in");
-    $("#modal").modal('show');
-    $(".btnEdit").prop('disabled', true);
+    //$("#modal").modal('show');
   }
 })
 //logout
