@@ -200,13 +200,13 @@ body {
 
 @media only screen and (max-width: 768px) {
   #footer {
-    bottom: -1100px;
+    bottom: -1300px;
   }
   body {
 
   }
   .news {
-    bottom: -900px;
+    bottom: -750px;
   }
 
 }
