@@ -1,16 +1,57 @@
 $(document).ready(function() {
   //backstretch
 $(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
+var cryptoArray = ["Bitcoin", "Etheruem", "Ripple", "Bitcoin Cash", ];
+var xchangeArray = ["Binance", "Kucoin", "BitBox", "Bittrex", "Kraken", "Poloniex",  ];
 //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
+//Coinigy API Key:
+//CRYPTOCOMPARE()
+//Crypto Compare Key: None
+//Ajax Crypto Compare Exchanges (all exchanges on thier api)
+$.ajax({
+  url: 'https://min-api.cryptocompare.com/data/all/exchanges',
+  type: 'GET',
+  dataType: 'json'
+})
+.done(function(response) {
+  console.log(response);
+  console.log("Exchange Names success");
+})
+.fail(function() {
+  console.log("error");
+})
+.always(function() {
+  console.log("complete");
+});
+
+//Ajax Crypto Compare Minute Data (what we need for Arbitrage--have to specify coin in url)
+$.ajax({
+  url: 'https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=10',
+  type: 'GET',
+  dataType: 'json'
+})
+.done(function(response) {
+  console.log("success Coin Price by Minute");
+  console.log(response);
+})
+.fail(function() {
+  console.log("error");
+})
+.always(function() {
+  console.log("complete");
+});
+
+
+
 
 //initialize firebase (need new database here)
 var config = {
-  apiKey: "AIzaSyAeAknL1yW7rAj6JhjNVDTCzV7t5OJVjHM",
-  authDomain: "fir-railways.firebaseapp.com",
-  databaseURL: "https://fir-railways.firebaseio.com",
-  projectId: "fir-railways",
-  storageBucket: "fir-railways.appspot.com",
-  messagingSenderId: "370451683022"
+  apiKey: "AIzaSyBeUXt8Ne-jQCvwGpMkiyjI-JQVpyxA1Bg",
+  authDomain: "crypto-test-914be.firebaseapp.com",
+  databaseURL: "https://crypto-test-914be.firebaseio.com",
+  projectId: "crypto-test-914be",
+  storageBucket: "",
+  messagingSenderId: "310681455458"
 };
 firebase.initializeApp(config);
 //login modal
