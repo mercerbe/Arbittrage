@@ -154,6 +154,11 @@ body {
   z-index: 1;
 }
 
+/*chart*/
+.chartContainer {
+  margin-top: 10%;
+}
+
 /*footer*/
 
 #filters {
