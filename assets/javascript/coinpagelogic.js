@@ -6,7 +6,26 @@ var xchangeArray = ["Binance", "Kucoin", "BitBox", "Bittrex", "Kraken", "Polonie
 //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
 //Coinigy API Key:
 //CoinMarketCap API key:
-//Cryptonator API key: url: https://www.cryptonator.com/api/ticker/btc-usd
+
+//CRYPTONATOR()
+//Cryptonator API key: url: https://www.cryptonator.com/api/full/btc-usd
+//Basic Ajax (Full info)
+$.ajax({
+  url: 'https://www.cryptonator.com/api/full/btc-usd',
+  type: 'GET',
+  dataType: 'json',
+})
+.done(function(response) {
+  console.log(response);
+  console.log("success: line 19 cryptonator full info");
+})
+.fail(function() {
+  console.log("error");
+})
+.always(function() {
+  console.log("complete");
+});
+
 //CRYPTOCOMPARE()
 //Crypto Compare Key: None
 //Ajax Crypto Compare Exchanges (all exchanges on thier api)
@@ -17,7 +36,7 @@ $.ajax({
 })
 .done(function(response) {
   console.log(response);
-  console.log("Exchange Names success");
+  console.log("sucess: line 38 cryptocompare all exchanges");
 })
 .fail(function() {
   console.log("error");
@@ -33,7 +52,7 @@ $.ajax({
   dataType: 'json'
 })
 .done(function(response) {
-  console.log("success Coin Price by Minute");
+  console.log("success: line 56 cryptocompare minute data");
   console.log(response);
 })
 .fail(function() {
