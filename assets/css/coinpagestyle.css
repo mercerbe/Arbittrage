@@ -13,7 +13,7 @@ body {
   min-width: 100%;
   box-sizing: inherit;
   position: relative;
-  margin-bottom: 371px;
+
   background-color: rgb(233, 236, 239);
 }
 
@@ -172,7 +172,7 @@ body {
 
 
 #footer {
-  bottom: -300px;
+
   color: rgb(244, 243, 243);
   width: 100%;
   position: absolute;
@@ -184,7 +184,7 @@ body {
 
 /*media queries*/
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   #footer {
     bottom: -1900px;
   }
@@ -199,12 +199,12 @@ body {
 
 }
 
-@media (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   #footer {
     bottom: -1100px;
   }
   body {
-    margin-bottom: 1100px;
+
   }
   .news {
     bottom: -900px;
@@ -212,15 +212,15 @@ body {
 
 }
 
-@media (max-width: 960px) {
+@media only screen and (min-width: 992px) {
   #footer {
-    bottom: -1300px;
+    bottom: -1000px;
   }
   body {
 
   }
   .news {
-    bottom: -700px;
+    bottom: -750px;
   }
 
 
