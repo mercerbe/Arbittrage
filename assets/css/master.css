@@ -108,7 +108,11 @@ body {
   width:25%
 }
 
-.main {
+.news {
+  clear: both;
+  bottom: -300px;
+  position: absolute;
+  width: 100%;
 }
 /*coin blocks*/
 
@@ -134,7 +138,10 @@ body {
 
 @media (max-width: 480px) {
   #footer {
-    bottom: -500px;
+    bottom: -1900px;
+  }
+  .news {
+    bottom: -1100px;
   }
   .sidenav {
     padding-top: 15px;}
@@ -146,21 +153,26 @@ body {
 
 @media (max-width: 768px) {
   #footer {
-    bottom: -500px;
+    bottom: -1100px;
   }
   body {
-    margin-bottom: 500px;
+    margin-bottom: 1100px;
   }
-
+  .news {
+    bottom: -900px;
+  }
 
 }
 
-@media (max-width: 3000px) {
+@media (max-width: 960px) {
   #footer {
     bottom: -1300px;
   }
   body {
-    margin-bottom: 1300px;
+
+  }
+  .news {
+    bottom: -1300px;
   }
 
 

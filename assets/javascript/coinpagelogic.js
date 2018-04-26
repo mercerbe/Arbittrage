@@ -6,6 +6,7 @@ var xchangeArray = ["Binance", "Kucoin", "BitBox", "Bittrex", "Kraken", "Polonie
 //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
 //Coinigy API Key:
 //CoinMarketCap API key:
+//Cryptonator API key: url: https://www.cryptonator.com/api/ticker/btc-usd
 //CRYPTOCOMPARE()
 //Crypto Compare Key: None
 //Ajax Crypto Compare Exchanges (all exchanges on thier api)

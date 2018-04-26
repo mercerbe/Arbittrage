@@ -148,6 +148,13 @@ body {
   height: 100px;
 }
 
+.news {
+  clear: both;
+  bottom: -300px;
+  position: absolute;
+  width: 100%;
+}
+
 /*footer*/
 
 #filters {
@@ -162,6 +169,7 @@ body {
 .links {
   color: white;
 }
+
 
 #footer {
   bottom: -300px;
@@ -178,30 +186,42 @@ body {
 
 @media (max-width: 480px) {
   #footer {
-    bottom: -500px;
+    bottom: -1900px;
+  }
+  .news {
+    bottom: -1100px;
   }
   .sidenav {
-    padding-top: 15px;
-  }
+    padding-top: 15px;}
   .sidenav a {
-    font-size: 18px;
-  }
+    font-size: 18px;}
+
+
 }
 
 @media (max-width: 768px) {
   #footer {
-    bottom: -500px;
+    bottom: -1100px;
   }
   body {
-    margin-bottom: 500px;
+    margin-bottom: 1100px;
   }
+  .news {
+    bottom: -900px;
+  }
+
 }
 
-@media (max-width: 3000px) {
+@media (max-width: 960px) {
   #footer {
     bottom: -1300px;
   }
   body {
-    margin-bottom: 1300px;
+
   }
+  .news {
+    bottom: -700px;
+  }
+
+
 }
