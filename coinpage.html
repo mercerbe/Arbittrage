@@ -21,7 +21,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <!-- Moment.js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
-  <title>Inspect Coin: (####)</title>
+  <title>Coin</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
     <!--navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <img src="assets/images/navbrand.png" alt="brand" width="40px">
-      <a class="navbar-brand" href="#">Arbittrage</a>
+      <a class="navbar-brand" href="index.html">Arbittrage</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -100,7 +100,7 @@
       <div class="main" style="">
         <!--card for curency-->
         <div class="card card-custom bg-white border-white">
-          <div class="card-custom-img" style="background-image: url('http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg');"></div>
+          <div class="card-custom-img" style="background-image: url('assets/images/cardBackground.jpg');"></div>
           <div class="card-custom-avatar">
             <img class="img-fluid" id="coinLogo" src="assets/images/bitcoin.png" alt="Avatar" />
           </div>
@@ -112,6 +112,13 @@
             <a href="#" class="btn btn-primary">Website?</a>
           </div>
         </div>
+      </div>
+      <hr>
+      <div class="container graph">
+        <p>graph</p>
+        <p>x-axis: price, y-axis: liquidity</p>
+        <a href="https://docs.google.com/spreadsheets/d/1HQxvdw-BLNILm7vRMyOK8ktGByzbsgs5rX4n3y_Jj7M/edit?usp=sharing" target="_blank">link to sheet</a>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVsesQjN_EUIz5piUsVLGybzq1bFz0t7MGQA-WE7i_tYjwurCNZE2zau0ljd1p-OnLpGZKZDcTTIYu/pubhtml?widget=true&amp;headers=false" width="700px" height="800px"></iframe>
       </div>
     </div>
     <!--graph for currency-->

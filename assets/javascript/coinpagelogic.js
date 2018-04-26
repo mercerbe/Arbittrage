@@ -5,6 +5,7 @@ var cryptoArray = ["Bitcoin", "Etheruem", "Ripple", "Bitcoin Cash", ];
 var xchangeArray = ["Binance", "Kucoin", "BitBox", "Bittrex", "Kraken", "Poloniex",  ];
 //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
 //Coinigy API Key:
+//CoinMarketCap API key:
 //CRYPTOCOMPARE()
 //Crypto Compare Key: None
 //Ajax Crypto Compare Exchanges (all exchanges on thier api)
