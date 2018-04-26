@@ -109,9 +109,9 @@ body {
 
 .news {
   clear: both;
-  bottom: -300px;
-  position: absolute;
+  position: relative;
   width: 100%;
+  z-index: 1;
 }
 /*coin blocks*/
 
@@ -130,18 +130,15 @@ body {
   position: absolute;
   text-align: center;
   background-color: rgba(12,12,37,1.0);
-  padding: 3% 0% 3% 0%;
+  padding: 0% 0% 3% 0%;
   z-index: 1;
 }
 
 /*media queries*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   #footer {
-    bottom: -2000px;
-  }
-  .news {
-    bottom: -1550px;
+    bottom: -1000px;
   }
   .sidenav {
     padding-top: 15px;}
@@ -158,9 +155,6 @@ body {
   body {
 
   }
-  .news {
-    bottom: -750px;
-  }
 
 }
 
@@ -171,9 +165,5 @@ body {
   body {
 
   }
-  .news {
-    bottom: -750px;
-  }
-
 
 }
