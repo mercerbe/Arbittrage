@@ -4,8 +4,26 @@ $(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/gi
 var cryptoArray = ["Bitcoin", "Etheruem", "Ripple", "Bitcoin Cash", ];
 var xchangeArray = ["Binance", "Kucoin", "BitBox", "Bittrex", "Kraken", "Poloniex",  ];
 //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
-//Coinigy API Key:
-//CoinMarketCap API key:
+
+//COINMARKETCAP()
+//CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30
+//Ajax ticket (with usd, top 100, limit 30 coins?)
+$.ajax({
+  url: 'https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30',
+  type: 'GET',
+  dataType: 'json',
+})
+.done(function(response) {
+  console.log(response);
+  console.log("success: line 17 coinmarketcap ticker info");
+})
+.fail(function() {
+  console.log("error");
+})
+.always(function() {
+  console.log("complete");
+});
+
 
 //CRYPTONATOR()
 //Cryptonator API key: url: https://www.cryptonator.com/api/full/btc-usd
@@ -17,7 +35,7 @@ $.ajax({
 })
 .done(function(response) {
   console.log(response);
-  console.log("success: line 19 cryptonator full info");
+  console.log("success: line 37 cryptonator full info");
 })
 .fail(function() {
   console.log("error");
@@ -36,7 +54,7 @@ $.ajax({
 })
 .done(function(response) {
   console.log(response);
-  console.log("sucess: line 38 cryptocompare all exchanges");
+  console.log("sucess: line 56 cryptocompare all exchanges");
 })
 .fail(function() {
   console.log("error");
@@ -52,7 +70,7 @@ $.ajax({
   dataType: 'json'
 })
 .done(function(response) {
-  console.log("success: line 56 cryptocompare minute data");
+  console.log("success: line 74 cryptocompare minute data");
   console.log(response);
 })
 .fail(function() {
@@ -61,6 +79,9 @@ $.ajax({
 .always(function() {
   console.log("complete");
 });
+
+
+//CHART.JS()
 
 
 
