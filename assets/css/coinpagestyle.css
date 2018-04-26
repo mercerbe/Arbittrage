@@ -155,6 +155,7 @@ body {
 }
 
 /*chart*/
+
 .chartContainer {
   margin-top: 10%;
 }
@@ -174,9 +175,7 @@ body {
   color: white;
 }
 
-
 #footer {
-
   color: rgb(244, 243, 243);
   width: 100%;
   position: absolute;
@@ -193,29 +192,23 @@ body {
     bottom: -1000px;
   }
   .sidenav {
-    padding-top: 15px;}
+    padding-top: 15px;
+  }
   .sidenav a {
-    font-size: 18px;}
-
-
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   #footer {
     bottom: -1300px;
   }
-  body {
-
-  }
-
+  body {}
 }
 
 @media only screen and (min-width: 769px) {
   #footer {
     bottom: -1000px;
   }
-  body {
-
-  }
-
+  body {}
 }

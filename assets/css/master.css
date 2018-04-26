@@ -13,13 +13,13 @@ body {
   min-width: 100%;
   box-sizing: inherit;
   position: relative;
-  background-color: rgb(233,236,239);
+  background-color: rgb(233, 236, 239);
 }
 
 .jumbotron {
   color: white;
   margin-bottom: 0;
-  border-bottom: 2px solid rgb(116,230,85);
+  border-bottom: 2px solid rgb(116, 230, 85);
   z-index: 1;
   font-family: 'Suez One', serif;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar {
-  background-color: rgba(12,12,37,1.0);
+  background-color: rgba(12, 12, 37, 1.0);
 }
 
 .navbar a {
@@ -46,53 +46,52 @@ body {
   margin-left: 15px;
 }
 
-.navbar-toggler {
+.navbar-toggler {}
 
-}
 .main {
   padding: 0px 10px;
   margin-left: 160px;
 }
 
 .sidenav {
-    font-family: 'Suez One', serif;
-    width: 130px;
-    position: absolute;
-    top: 500px;
-    left: 10px;
-    background: #eee;
-    overflow-x: hidden;
-    padding: 8px 0;
-    border: 2px solid rgb(116,230,85);
+  font-family: 'Suez One', serif;
+  width: 130px;
+  position: absolute;
+  top: 500px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+  border: 2px solid rgb(116, 230, 85);
 }
 
 .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #2196F3;
-    display: block;
-    font-family: sans-serif;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #2196F3;
+  display: block;
+  font-family: sans-serif;
 }
 
 .sidenav p {
-    padding: 6px 8px 6px 16px;
-    font-size: 18px;
-    color: black;
-    display: block;
+  padding: 6px 8px 6px 16px;
+  font-size: 18px;
+  color: black;
+  display: block;
 }
 
 .sidenav a:hover {
-    color: #064579;
+  color: #064579;
 }
 
 .modal-header {
-  background-color: rgba(12,12,37,1.0);
+  background-color: rgba(12, 12, 37, 1.0);
   color: white;
 }
 
 .modal-body {
-  background-color: rgb(230,234,237);
+  background-color: rgb(230, 234, 237);
 }
 
 #modalImg {
@@ -103,8 +102,8 @@ body {
 }
 
 #filters {
-  background-color: rgb(192,192,182);
-  width:25%
+  background-color: rgb(192, 192, 182);
+  width: 25%
 }
 
 .news {
@@ -113,10 +112,11 @@ body {
   width: 100%;
   z-index: 1;
 }
+
 /*coin blocks*/
 
 .footerh5 {
-  color: rgb(48,180,112)
+  color: rgb(48, 180, 112)
 }
 
 .links {
@@ -124,12 +124,11 @@ body {
 }
 
 #footer {
-
-  color: rgb(244,243,243);
-  width:100%;
+  color: rgb(244, 243, 243);
+  width: 100%;
   position: absolute;
   text-align: center;
-  background-color: rgba(12,12,37,1.0);
+  background-color: rgba(12, 12, 37, 1.0);
   padding: 0% 0% 3% 0%;
   z-index: 1;
 }
@@ -141,29 +140,23 @@ body {
     bottom: -1000px;
   }
   .sidenav {
-    padding-top: 15px;}
+    padding-top: 15px;
+  }
   .sidenav a {
-    font-size: 18px;}
-
-
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   #footer {
     bottom: -1300px;
   }
-  body {
-
-  }
-
+  body {}
 }
 
 @media only screen and (min-width: 769px) {
   #footer {
     bottom: -1000px;
   }
-  body {
-
-  }
-
+  body {}
 }
