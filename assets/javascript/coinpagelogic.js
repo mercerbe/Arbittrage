@@ -91,11 +91,19 @@ $(document).ready(function() {
     data: {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [{
-        label: "My First dataset",
-        backgroundColor: 'rgb(48,180,112)',
-        borderColor: 'rgba(12, 12, 37, 1.0)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
+          label: "My First dataset",
+          backgroundColor: 'rgba(48,180,112,0.3)',
+          borderColor: 'rgba(12, 12, 37, 1.0)',
+          data: [0, 10, 5, 2, 20, 30, 45],
+        },
+        {
+          label: "My Second dataset",
+          backgroundColor: 'rgba(252,177,21,0.3)',
+          borderColor: 'rgba(12, 12, 37, 1.0)',
+          data: [5, 15, 10, 20, 10, 50, 30],
+
+        }
+      ]
     },
 
     // Configuration options go here
