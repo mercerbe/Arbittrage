@@ -1,15 +1,17 @@
 $(document).ready(function() {
   //backstretch
   $(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
-  var cryptoArray = ["Bitcoin", "Etheruem", "Ripple", "Bitcoin Cash", ];
-  var xchangeArray = ["Binance", "Kucoin", "BitBox", "Bittrex", "Kraken", "Poloniex", ];
+  var cryptoArrayById = ["bitcoin", "etheruem", "ripple", "bitcoin-cash", "eos", "litecoin", "cardano", "stellar", "iota", "neo", "tron", "monero", "dash", "nem", "tether", "ethereum-classic", "vechain", "omisego", "qtum",
+   "binance-coin", "icon", "bitcoin-gold", "lisk", "zcash", "verge", "steem", "bytecoin-bcn", "bytom", "nano", "bitcoin-private"];
+  var xchangeArray = ["BitFinex", "Bitstamp", "Bittrex", "C-Cex", "Cex.io", "Exmo", "Hitbtc", "Kraken", "Livecoin", "Poloniex", "wexnz", "YoBit"];
+  var exchangesBenWouldLikeToAdd = ["Binance", "Kucoin", "Coinbase"]
   //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
 
   //COINMARKETCAP()
   //CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30
-  //Ajax ticket (with usd, top 100, limit 30 coins?)
+  //Ajax ticket (with usd, top 0, limit 30 coins?)
   $.ajax({
-      url: 'https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30',
+      url: 'https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=0&limit=30',
       type: 'GET',
       dataType: 'json',
     })
@@ -87,7 +89,7 @@ $(document).ready(function() {
     // The type of chart we want to create
     type: 'line',
 
-    // The data for our dataset
+    // The data for our chart
     data: {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [{
