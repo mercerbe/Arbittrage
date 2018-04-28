@@ -1,6 +1,7 @@
 $(document).ready(function() {
   //backstretch
   $(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
+
   //Arrays
   var cryptoArrayById = [{"id": "bitcoin", "logo":"assets/images/bitcoin.png"}, {"id":"etheruem", "logo":"assets/images/eth.png"}, {"id":"ripple", "logo":"assets/images/xrp.png"}, {"id":"bitcoin-cash", "logo":"assets/images/bitcoin-cash.png"},
    {"id":"eos", "logo":"assets/images/eos.png"}, {"id":"litecoin", "logo":"assets/images/litecoin.png"}, {"id":"cardano", "logo":"assets/images/cardano.png"}, {"id":"stellar", "logo":"assets/images/stellar.png"}, {"id":"iota", "logo":"assets/images/iota.png"},
@@ -35,6 +36,10 @@ $(document).ready(function() {
     elementsPerPage: 12,
     effect: 'default',
   });
+
+  $(".easyPaginateNav").on("click", function(){
+    $(window).scrollTop(250);
+  })
 
   //COINMARKETCAP()
   //CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30
@@ -138,7 +143,7 @@ $(document).ready(function() {
     },
 
     // Configuration options go here
-    options: {}
+    options: {},
   });
 
 
