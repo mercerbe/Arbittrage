@@ -118,6 +118,8 @@ body {
 .easyPaginateNav {
   text-align: center;
   font-family: 'Suez One', serif;
+  border: 0px solid black;
+  width: 10%;
 }
 
 .easyPaginateNav a {
@@ -131,6 +133,7 @@ body {
 }
 
 #filters {
+  clear:both;
   background-color: rgb(192, 192, 182);
   width: 25%
 }

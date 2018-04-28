@@ -122,10 +122,10 @@ $(document).ready(function() {
     data: {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [{
-          label: "My First dataset",
+          label: "My First dataset",//exchanges
           backgroundColor: 'rgba(48,180,112,0.3)',
           borderColor: 'rgba(12, 12, 37, 1.0)',
-          data: [0, 10, 5, 2, 20, 30, 45],
+          data: [0, 10, 5, 2, 20, 30, 45],//price on exchange
         },
         {
           label: "My Second dataset",
