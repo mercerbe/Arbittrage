@@ -3,8 +3,15 @@ $(document).ready(function() {
   $(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
   var cryptoArrayById = ["bitcoin", "etheruem", "ripple", "bitcoin-cash", "eos", "litecoin", "cardano", "stellar", "iota", "neo", "tron", "monero", "dash", "nem", "tether", "ethereum-classic", "vechain", "omisego", "qtum",
    "binance-coin", "icon", "bitcoin-gold", "lisk", "zcash", "verge", "steem", "bytecoin-bcn", "bytom", "nano", "bitcoin-private"];
-  var xchangeArray = ["BitFinex", "Bitstamp", "Bittrex", "C-Cex", "Cex.io", "Exmo", "Hitbtc", "Kraken", "Livecoin", "Poloniex", "wexnz", "YoBit"];
+  var exchangeArray = ["BitFinex", "Bitstamp", "Bittrex", "C-Cex", "Cex.io", "Exmo", "Hitbtc", "Kraken", "Livecoin", "Poloniex", "wexnz", "YoBit"];
   var exchangesBenWouldLikeToAdd = ["Binance", "Kucoin", "Coinbase"]
+  //for loop for filter sidebar
+  for (var i = 0; i < exchangeArray.length; i++) {
+    var exchangeFilter = $("<a class='btn btn-success exchangeFilter'>");
+    exchangeFilter.text(exchangeArray[i]);
+
+    $(".sidenav").append(exchangeFilter);
+  };
   //Coin API Key: 09F8AB63-58B9-46D9-AF1E-1B0F731A33D0
 
   //COINMARKETCAP()
