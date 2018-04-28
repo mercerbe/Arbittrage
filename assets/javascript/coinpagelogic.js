@@ -27,8 +27,8 @@ $(document).ready(function() {
   $("#easyPaginate").easyPaginate({
     paginateElement: 'img',
     elementsPerPage: 12,
-    effect: 'climb',
-  })
+    effect: 'default',
+  });
 
   //COINMARKETCAP()
   //CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30
