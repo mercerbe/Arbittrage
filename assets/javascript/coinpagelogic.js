@@ -16,7 +16,7 @@ $(document).ready(function() {
   //for loop for landing page coin images/Links
   for (var i = 0; i < cryptoArrayById.length; i++) {
     var coinThumbnail = $("<img src='http://fakeimg.pl/200x200/' class='img-fluid img-thumbnail coinImg btn'>");
-    $(".coinGallery").append(coinThumbnail);
+    $("#easyPaginate").append(coinThumbnail);
     coinThumbnail.on("click", function() {
       console.log("click");
       window.location = "coinpage.html";
