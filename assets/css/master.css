@@ -107,6 +107,7 @@ body {
 
 #easyPaginate {
   border: 0px solid black;
+  margin-left: -30px;
 }
 
 #easyPaginate img {
@@ -119,7 +120,9 @@ body {
   text-align: center;
   font-family: 'Suez One', serif;
   border: 0px solid black;
-  width: 10%;
+  width: 200px;
+  float: left;
+  margin-left: -30px;
 }
 
 .easyPaginateNav a {
@@ -129,7 +132,8 @@ body {
 
 .easyPaginateNav a.current {
   font-weight:bold;
-  text-decoration:underline;
+  text-decoration: none;
+  color: rgb(48, 180, 112);
 }
 
 #filters {
@@ -148,7 +152,7 @@ body {
 /*coin blocks*/
 
 .footerh5 {
-  color: rgb(48, 180, 112)
+  color: rgb(48, 180, 112);
 }
 
 .links {
@@ -177,8 +181,14 @@ body {
   .sidenav a {
     font-size: 18px;
   }
+  .easyPaginateNav {
+    margin-left: -60px;
+  }
+
   #easyPaginate img {
     margin-left: 0px;
+    max-width: 150px;
+    min-width: 150px;
   }
 }
 
