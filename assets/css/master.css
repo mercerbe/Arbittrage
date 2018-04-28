@@ -106,11 +106,12 @@ body {
 }
 
 #easyPaginate {
-  border: 1px solid black;
+  border: 0px solid black;
 }
 
 #easyPaginate img {
   max-width: 200px;
+  min-width: 100px;
   margin: 3px;
 }
 
@@ -125,7 +126,8 @@ body {
 }
 
 .easyPaginateNav a.current {
-  font-weight:bold;text-decoration:underline;
+  font-weight:bold;
+  text-decoration:underline;
 }
 
 #filters {
@@ -171,6 +173,9 @@ body {
   }
   .sidenav a {
     font-size: 18px;
+  }
+  #easyPaginate img {
+    margin-left: 0px;
   }
 }
 
