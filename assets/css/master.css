@@ -105,6 +105,10 @@ body {
   margin-right: auto;
 }
 
+.coinImg {
+  margin: 3px;
+}
+
 #filters {
   background-color: rgb(192, 192, 182);
   width: 25%
