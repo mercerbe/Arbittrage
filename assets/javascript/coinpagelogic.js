@@ -15,13 +15,20 @@ $(document).ready(function() {
   };
   //for loop for landing page coin images/Links
   for (var i = 0; i < cryptoArrayById.length; i++) {
-    var coinThumbnail = $("<img src='http://fakeimg.pl/200x200/' class='img-fluid img-thumbnail float-left coinImg btn'>");
+    var coinThumbnail = $("<img src='http://fakeimg.pl/200x200/' class='img-fluid img-thumbnail coinImg btn'>");
     $(".coinGallery").append(coinThumbnail);
     coinThumbnail.on("click", function() {
       console.log("click");
       window.location = "coinpage.html";
     })
   };
+
+//pagination for landing page images/links
+  $("#easyPaginate").easyPaginate({
+    paginateElement: 'img',
+    elementsPerPage: 12,
+    effect: 'climb',
+  })
 
   //COINMARKETCAP()
   //CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30

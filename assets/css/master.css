@@ -105,9 +105,16 @@ body {
   margin-right: auto;
 }
 
-.coinImg {
+#easyPaginate img {
+  max-width: 200px;
   margin: 3px;
+  float: left;
 }
+
+#easyPaginate {width:300px;}
+#easyPaginate img {display:block;margin-bottom:10px;}
+.easyPaginateNav a {padding:5px;}
+.easyPaginateNav a.current {font-weight:bold;text-decoration:underline;}
 
 #filters {
   background-color: rgb(192, 192, 182);
