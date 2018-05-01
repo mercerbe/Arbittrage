@@ -21,13 +21,16 @@ $(document).ready(function() {
   };
   //for loop for landing page coin images/Links
   for (var i = 0; i < cryptoArrayById.length; i++) {
-    var coinThumbnail = $("<img src='http://fakeimg.pl/200x200/' class='img-fluid img-thumbnail coinImg btn'>");
+    var coinThumbnail = $("<img class='img-fluid img-thumbnail coinImg btn'>");
+    var favIcon = $("<i class='far fa-star favIcon'>");
     coinThumbnail.attr('src', cryptoArrayById[i].logo);
+    coinThumbnail.append(favIcon);
+    coinThumbnail.attr('data', cryptoArrayById[i].id);
     $("#easyPaginate").append(coinThumbnail);
     coinThumbnail.on("click", function() {
       console.log("click");
       window.location = "coinpage.html";
-    })
+    });
   };
 
 //pagination for landing page images/links
@@ -185,6 +188,7 @@ $(document).ready(function() {
     var email = txtEmail.value;
     var pass = txtPass.value;
     var auth = firebase.auth();
+    console.log("click");
     //sign in
     var promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
@@ -210,6 +214,7 @@ $(document).ready(function() {
   })
   //show modal
   btnShowModal.addEventListener('click', e => {
+    console.log("click");
     setTimeout(function() {
       $("#modal").modal('show');
     }, 500);

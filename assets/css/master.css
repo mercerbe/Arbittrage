@@ -105,6 +105,11 @@ body {
   margin-right: auto;
 }
 
+.favIcon {
+  z-index: 99;
+  color: yellow;
+}
+
 #easyPaginate {
   border: 0px solid black;
   margin-left: -30px;
