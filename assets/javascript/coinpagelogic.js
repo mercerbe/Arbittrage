@@ -39,7 +39,7 @@ $(document).ready(function() {
 
   $(".easyPaginateNav").on("click", function(){
     $(window).scrollTop(250);
-  })
+  });
 
   //COINMARKETCAP()
   //CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30
