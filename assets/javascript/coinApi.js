@@ -56,7 +56,7 @@ function postTradeValue(market, price, base) {
             arrLabels.splice(0,1);
             arrValues.splice(0,1);
         }
-        if(market == "marketCap")
+        if(market == "MarketCap")
         {
             let labels = getLabelsIndex();
             let arrLabels = list["labels"];
@@ -74,7 +74,7 @@ function getLabelsIndex() {
 }
 
 function getValuesIndex(currency, market) {
-    let index = "/" + currency + "/pricehistory/" + market + "/values";
+    let index = "/" + currency + "/pricehistory/" + market;
     return index;
 }
 
