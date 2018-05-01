@@ -92,6 +92,7 @@ function init() {
     var queryURL = "https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD"
     if(listSet && isDriver)
     {
+        cryptonator();
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -103,4 +104,43 @@ function init() {
     }
 }
 
-setInterval(init, 1000*2);
+function cryptonator(){
+    var queryURL = 'https://api.cryptonator.com/api/full/btc-usd'
+
+    $.ajax({
+        url: queryURL,
+        method:"GET"
+
+    })
+
+    .then(function(response){
+       console.log(response);
+        
+        var results = response.ticker.markets;
+        let base = response.ticker.base;
+        let max = 5;
+
+        if(max > results.length) {
+            max = results.length;
+        }
+
+        for (var i = 0; i < max; i++){
+            var price = results[i].price;
+            var market = results[i].market;
+            var volume = results[i].volume;
+            
+            // console.log(market);
+            // console.log(price);
+            // console.log(base);
+            // price = [parseFloat(price)];
+            // console.log(price);
+            postTradeValue(market,price,base);
+            //database.ref().child("frogfrogfrog" + "/" + base + "/pricehistory/" + market).set([price]);
+        }
+
+
+    });
+
+}
+
+setInterval(init, 1000*10);
