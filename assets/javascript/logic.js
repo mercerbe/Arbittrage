@@ -24,7 +24,7 @@ $(document).ready(function() {
     var coinThumbnail = $("<img class='img-fluid img-thumbnail coinImg btn'>");
     var favIcon = $("<i class='far fa-star favIcon'>");
     coinThumbnail.attr('src', cryptoArrayById[i].logo);
-    coinThumbnail.append(favIcon);
+    coinThumbnail.text(favIcon);
     coinThumbnail.attr('data', cryptoArrayById[i].id);
     $("#easyPaginate").append(coinThumbnail);
     coinThumbnail.on("click", function() {
@@ -201,7 +201,6 @@ $(document).ready(function() {
       $("#modal").modal('hide');
     } else {
       console.log("not logged in");
-      //$("#modal").modal('show');
     }
   })
   //logout
@@ -217,7 +216,7 @@ $(document).ready(function() {
     console.log("click");
     setTimeout(function() {
       $("#modal").modal('show');
-    }, 500);
+    }, 100);
   })
 });
 
