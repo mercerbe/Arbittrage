@@ -11,27 +11,65 @@ firebase.initializeApp(config);
 var database =  firebase.database();
 var listSet = false;
 var list;
+var myConnectionsRef = firebase.database().ref('users/count');
+let count = 0;
+let timer;
+let isDriver = false;
+
+function setDriver() {
+    console.log("in here 1");
+    if(count > 0) {
+        isDriver = true;
+        count = count - 1;
+        console.log("Count is now: " + count);
+        myConnectionsRef.set(count);
+    }
+}
+
+myConnectionsRef.on("value", function(snapshot) {
+    
+    count = snapshot.val();
+    
+    if(count > 0) {
+        let random = Math.random();
+        console.log("random: " + (random*15000));
+        setTimeout(setDriver,15000*random);
+    }
+    if(isDriver) {
+        myConnectionsRef.onDisconnect().set(1);
+    }
+});
+
 database.ref().on("value", function(snapshot) {
-    console.log(snapshot.val().frogfrogfrog);
     list = snapshot.val().frogfrogfrog;
     listSet = true;
 });
 
 function postTradeValue(market, price, base) {
-    let labels = getLabelsIndex(base,market);
-    let values = getValuesIndex(base,market);
-    let currentDate = getFormattedDate();
-    console.log(currentDate);
-    let arrLabels = list[base]["pricehistory"][market]["labels"];
-    arrLabels.push(currentDate);
-    let arrValues = list[base]["pricehistory"][market]["values"];
-    arrValues.push(price);
-    database.ref().child("frogfrogfrog"+ labels).set(arrLabels);
-    database.ref().child("frogfrogfrog" + values).set(arrValues);
+    if(isDriver) {
+        let values = getValuesIndex(base,market);
+        let currentDate = getFormattedDate();
+        console.log(currentDate);
+        let arrValues = list[base]["pricehistory"][market];
+        if(list["labels"].length > 49 || arrValues.length > 49)
+        {
+            arrLabels.splice(0,1);
+            arrValues.splice(0,1);
+        }
+        if(market == "marketCap")
+        {
+            let labels = getLabelsIndex();
+            let arrLabels = list["labels"];
+            arrLabels.push(currentDate);
+            database.ref().child("frogfrogfrog"+ labels).set(arrLabels);
+        }
+        arrValues.push(price);
+        database.ref().child("frogfrogfrog" + values).set(arrValues);
+    }
 }
 
-function getLabelsIndex(currency, market) {
-    let index = "/" + currency + "/pricehistory/" + market + "/labels";
+function getLabelsIndex() {
+    let index = "/labels";
     return index;
 }
 
@@ -48,7 +86,7 @@ function getFormattedDate() {
 
 function init() {
     var queryURL = "https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD"
-    if(listSet)
+    if(listSet && isDriver)
     {
         $.ajax({
             url: queryURL,
@@ -56,9 +94,9 @@ function init() {
         }).then(function(response){
             console.log(response["0"].price_usd);
             let price = parseInt(response["0"].price_usd);
-            postTradeValue("marketCap",price,"BTC");
+            postTradeValue("MarketCap",price,"BTC");
         });
     }
 }
 
-setTimeout(init, 1000*2);
+setInterval(init, 1000*2);
