@@ -83,41 +83,6 @@ $(document).ready(function() {
       console.log("complete");
     });
 
-  //CRYPTOCOMPARE()
-  //Crypto Compare Key: None
-  //Ajax Crypto Compare Exchanges (all exchanges on thier api)
-  $.ajax({
-      url: 'https://min-api.cryptocompare.com/data/all/exchanges',
-      type: 'GET',
-      dataType: 'json'
-    })
-    .done(function(response) {
-      console.log(response);
-      console.log("sucess: line 56 cryptocompare all exchanges");
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
-
-  //Ajax Crypto Compare Minute Data (what we need for Arbitrage--have to specify coin in url)
-  $.ajax({
-      url: 'https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=10',
-      type: 'GET',
-      dataType: 'json'
-    })
-    .done(function(response) {
-      console.log("success: line 74 cryptocompare minute data");
-      console.log(response);
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
 
 
   //CHART.JS()
@@ -130,7 +95,7 @@ $(document).ready(function() {
     data: {
       labels: ["January", "February", "March", "April", "May", "June", "July"],
       datasets: [{
-          label: "My First dataset",//exchanges
+          label: "CoinMarketCap",//exchanges
           backgroundColor: 'rgba(48,180,112,0.3)',
           borderColor: 'rgba(12, 12, 37, 1.0)',
           data: [0, 10, 5, 2, 20, 30, 45],//price on exchange
