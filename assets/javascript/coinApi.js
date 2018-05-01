@@ -27,9 +27,9 @@ function setDriver() {
 }
 
 myConnectionsRef.on("value", function(snapshot) {
-    
+
     count = snapshot.val();
-    
+
     if(count > 0) {
         let random = Math.random();
         console.log("random: " + (random*15000));
@@ -51,17 +51,21 @@ function postTradeValue(market, price, base) {
         let currentDate = getFormattedDate();
         console.log(currentDate);
         let arrValues = list[base]["pricehistory"][market];
-        if(list["labels"].length > 49 || arrValues.length > 49)
-        {
-            arrLabels.splice(0,1);
-            arrValues.splice(0,1);
-        }
+        let arrLabels;
         if(market == "MarketCap")
         {
             let labels = getLabelsIndex();
-            let arrLabels = list["labels"];
+            arrLabels = list["labels"];
+            if(arrLabels.length > 49)
+            {
+              arrLabels.splice(0,1);
+            }
             arrLabels.push(currentDate);
             database.ref().child("frogfrogfrog"+ labels).set(arrLabels);
+        }
+        if(arrValues.length > 49)
+        {
+            arrValues.splice(0,1);
         }
         arrValues.push(price);
         database.ref().child("frogfrogfrog" + values).set(arrValues);

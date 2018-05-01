@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
 
-    
+
     var queryURL = 'https://api.cryptonator.com/api/full/btc-usd'
-    
+
     $.ajax({
         url: queryURL,
         method:"GET"
-      
+
     })
 
     .then(function(response){
@@ -25,19 +25,15 @@ $(document).ready(function(){
 
             var price = results[i].price;
             var market = results[i].market;
-            var base = response.base;
+            var base = results[i].base;
+            var volume = results[i].volume;
             console.log(market);
             console.log(price);
-            console.log(volume);
+            //console.log(volume);
             console.log(base);
         }
 
 
-    });  
+    });
 
 });
-
-
-
-
- 

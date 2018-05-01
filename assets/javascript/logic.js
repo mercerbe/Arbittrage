@@ -28,6 +28,7 @@ $(document).ready(function() {
     $("#easyPaginate").on("click", coinThumbnail, function() {
       console.log("click");
       window.location = "coinpage.html";
+      //append card info here using cryptoArrayById[i].id & coin market cap API
     });
   };
 
