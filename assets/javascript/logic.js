@@ -22,12 +22,10 @@ $(document).ready(function() {
   //for loop for landing page coin images/Links
   for (var i = 0; i < cryptoArrayById.length; i++) {
     var coinThumbnail = $("<img class='img-fluid img-thumbnail coinImg btn'>");
-    var favIcon = $("<i class='far fa-star favIcon'>");
     coinThumbnail.attr('src', cryptoArrayById[i].logo);
-    coinThumbnail.text(favIcon);
     coinThumbnail.attr('data', cryptoArrayById[i].id);
     $("#easyPaginate").append(coinThumbnail);
-    coinThumbnail.on("click", function() {
+    $("#easyPaginate").on("click", coinThumbnail, function() {
       console.log("click");
       window.location = "coinpage.html";
     });
@@ -43,6 +41,7 @@ $(document).ready(function() {
   $(".easyPaginateNav").on("click", function(){
     $(window).scrollTop(250);
   });
+
 
   //COINMARKETCAP()
   //CoinMarketCap API key: url: https://api.coinmarketcap.com/v1/ticker/?convert=USD&start=100&limit=30

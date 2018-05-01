@@ -106,8 +106,7 @@ body {
 }
 
 .favIcon {
-  z-index: 99;
-  color: yellow;
+  max-width: 25px;
 }
 
 #easyPaginate {
