@@ -108,7 +108,22 @@ setTimeout(function() {
 
 //search coins
 $(".searchCoins").on("click", function() {
-   $("#searchTicker").quicksearch()
+   var input, filter, ul, li, a, i;
+   input = document.getElementById(searchTicker);
+   filter = input.value.toUpperCase();
+   console.log(filter);
+   ul = document.getElementById(easyPaginate);
+   li = ul.a.img.querySelector("data");
+   for (var i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+         li[i].style.display = "";
+
+      }else {
+         li[i].style.display = "none";
+      }
+   }
+
 
 })
  });
