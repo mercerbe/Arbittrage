@@ -105,4 +105,10 @@ setTimeout(function() {
    $("#modal").modal('show');
 }, 100);
 })
+
+//search coins
+$(".searchCoins").on("click", function() {
+   $("#searchTicker").quicksearch()
+
+})
  });

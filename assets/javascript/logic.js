@@ -80,6 +80,8 @@ $(document).ready(function() {
       $("#modal").modal('show');
     }, 100);
   })
+
+  
 });
 
 //
