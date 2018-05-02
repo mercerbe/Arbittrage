@@ -12,23 +12,28 @@ var cryptoArrayById = [{"id": "bitcoin", "logo":"assets/images/bitcoin.png"}, {"
  {"id":"bytom", "logo":"assets/images/bytom.png"}, {"id":"nano", "logo":"assets/images/nano.jpg"}, {"id":"bitcoin-private", "logo":"assets/images/bitcoin-private.png"}];
 var exchangeArray = ["BitFinex", "Bitstamp", "Bittrex", "C-Cex", "Cex.io", "Exmo", "Hitbtc", "Kraken", "Livecoin", "Poloniex", "wexnz", "YoBit"];
  //var exchangesBenWouldLikeToAdd = ["Binance", "Kucoin", "Coinbase"];
-
+let easyPaginate = document.getElementById("easyPaginate");
  //for loop for landing page coin images/Links
  for (var i = 0; i < cryptoArrayById.length; i++) {
-   var coinThumbnail = $("<img class='img-fluid img-thumbnail coinImg btn'>");
-   coinThumbnail.attr('src', cryptoArrayById[i].logo);
-   coinThumbnail.attr('data', cryptoArrayById[i].id);
-   $("#easyPaginate").append(coinThumbnail);
-   $("#easyPaginate").on("click", coinThumbnail, function() {
-     console.log("click");
-     window.location = "coinpage.html";
-     //append card info here using cryptoArrayById[i].id & coin market cap API
-   });
+    var anchor = document.createElement("a");
+    let link = "coinpage.html?ticker=" + cryptoArrayById[i].id;
+    console.log(link);
+    anchor.setAttribute("href",link);
+    var coinThumbnail = document.createElement("img");
+    coinThumbnail.classList.add("img-fluid");
+    coinThumbnail.classList.add("img-thumbnail");
+    coinThumbnail.classList.add("coinImg");
+    coinThumbnail.setAttribute('src', cryptoArrayById[i].logo);
+    coinThumbnail.setAttribute('data', cryptoArrayById[i].id);
+    anchor.append(coinThumbnail);
+    console.log(anchor);
+    easyPaginate.append(anchor);
+    console.log(easyPaginate);
  };
 
 //pagination for landing page images/links
  $("#easyPaginate").easyPaginate({
-   paginateElement: 'img',
+   paginateElement: 'a',
    elementsPerPage: 12,
    effect: 'default',
  });
@@ -40,59 +45,59 @@ var exchangeArray = ["BitFinex", "Bitstamp", "Bittrex", "C-Cex", "Cex.io", "Exmo
 //login modal
 
 //signIn
-var txtEmail = document.getElementById('txtEmail');
-var txtPass = document.getElementById('txtPass');
-var btnLogin = document.getElementById('btnLogin');
-var btnSignup = document.getElementById('btnSignup');
-var btnLogout = document.getElementById('btnLogout');
-var btnShowModal = document.getElementById('btnShowModal');
+// var txtEmail = document.getElementById('txtEmail');
+// var txtPass = document.getElementById('txtPass');
+// var btnLogin = document.getElementById('btnLogin');
+// var btnSignup = document.getElementById('btnSignup');
+// var btnLogout = document.getElementById('btnLogout');
+// var btnShowModal = document.getElementById('btnShowModal');
 
 //login
-btnLogin.addEventListener('click', e => {
-//get email and pass
-var email = txtEmail.value;
-var pass = txtPass.value;
-var auth = firebase.auth();
-//sign in
-var promise = auth.signInWithEmailAndPassword(email, pass);
-promise.catch(e => console.log(e.message));
-promise.catch(e => alert("Not signed up. Please sign up first!"));
-
-})
+// btnLogin.addEventListener('click', e => {
+// //get email and pass
+// var email = txtEmail.value;
+// var pass = txtPass.value;
+// var auth = firebase.auth();
+// //sign in
+// var promise = auth.signInWithEmailAndPassword(email, pass);
+// promise.catch(e => console.log(e.message));
+// promise.catch(e => alert("Not signed up. Please sign up first!"));
+//
+// })
 
 //sign up
-btnSignup.addEventListener('click', e => {
-var email = txtEmail.value;
-var pass = txtPass.value;
-var auth = firebase.auth();
-console.log("click");
-//sign in
-var promise = auth.createUserWithEmailAndPassword(email, pass);
-promise.catch(e => console.log(e.message));
-})
+// btnSignup.addEventListener('click', e => {
+// var email = txtEmail.value;
+// var pass = txtPass.value;
+// var auth = firebase.auth();
+// console.log("click");
+// //sign in
+// var promise = auth.createUserWithEmailAndPassword(email, pass);
+// promise.catch(e => console.log(e.message));
+// })
 
 //real time auth listener
-firebase.auth().onAuthStateChanged(firebaseUser => {
-if (firebaseUser) {
-   console.log(firebaseUser);
-   $("#modal").modal('hide');
-} else {
-   console.log("not logged in");
-}
-})
+// firebase.auth().onAuthStateChanged(firebaseUser => {
+// if (firebaseUser) {
+//    console.log(firebaseUser);
+//    $("#modal").modal('hide');
+// } else {
+//    console.log("not logged in");
+// }
+// })
 //logout
-btnLogout.addEventListener('click', e => {
-firebase.auth().signOut();
-setTimeout(function() {
-   $("#modal").modal('show');
-}, 1000);
-
-})
-//show modal
-btnShowModal.addEventListener('click', e => {
-console.log("click");
-setTimeout(function() {
-   $("#modal").modal('show');
-}, 100);
-})
-});
+// btnLogout.addEventListener('click', e => {
+// firebase.auth().signOut();
+// setTimeout(function() {
+//    $("#modal").modal('show');
+// }, 1000);
+//
+// })
+// //show modal
+// btnShowModal.addEventListener('click', e => {
+// console.log("click");
+// setTimeout(function() {
+//    $("#modal").modal('show');
+// }, 100);
+// })
+ });
