@@ -107,7 +107,7 @@ function getFormattedDate() {
 
 function init() {
     let coinName = getCoinName(ticker);
-    var queryURL = "https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD"
+    var queryURL = "https://api.coinmarketcap.com/v1/ticker/"+coinName+"/?convert=USD";
     if(listSet && isDriver)
     {
         cryptonator();
