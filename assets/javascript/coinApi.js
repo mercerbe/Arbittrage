@@ -1,3 +1,4 @@
+
 var config = {
     apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
     authDomain: "rock-paper-scissors-ee0a8.firebaseapp.com",
@@ -15,6 +16,10 @@ var myConnectionsRef = firebase.database().ref('users/count');
 let count = 0;
 let timer;
 let isDriver = false;
+
+function getlist() {
+  return list;
+}
 
 function setDriver() {
     console.log("in here 1");
@@ -68,6 +73,7 @@ function postTradeValue(market, price, base) {
             arrValues.splice(0,1);
         }
         arrValues.push(price);
+        console.log(arrValues);
         database.ref().child("frogfrogfrog" + values).set(arrValues);
     }
 }
@@ -101,6 +107,7 @@ function init() {
             let price = parseInt(response["0"].price_usd);
             postTradeValue("MarketCap",price,"BTC");
         });
+        drawChart();
     }
 }
 
@@ -115,7 +122,7 @@ function cryptonator(){
 
     .then(function(response){
        console.log(response);
-        
+
         var results = response.ticker.markets;
         let base = response.ticker.base;
         let max = 5;
@@ -128,7 +135,7 @@ function cryptonator(){
             var price = results[i].price;
             var market = results[i].market;
             var volume = results[i].volume;
-            
+
             // console.log(market);
             // console.log(price);
             // console.log(base);
@@ -141,6 +148,48 @@ function cryptonator(){
 
     });
 
+}
+
+var ctx = document.getElementById('myChart').getContext('2d');
+
+function drawChart(currency) {
+    if(listSet){
+      myChartObj = {};
+      myChartObj["labels"] = list["labels"];
+      let count = 0;
+      for(node in list["BTC"]["pricehistory"])
+      {
+        let tempObj = {};
+        tempObj["label"] = node;
+        let tempArr = list[currency]["pricehistory"][node];
+        let colorArr = [""];
+        for(var l = 0; l < 7; l++)
+        {
+          colorArr.push(Math.floor(Math.random()*248));
+        }
+        console.log(colorArr);
+        tempObj["data"] = tempArr;
+        tempObj["backgroundColor"] = "rgb(" + colorArr[1]+ ", " + colorArr[2] + ", " + colorArr[3] + ", " + 0.3 + ")";
+        console.log(tempObj["backgroundColor"]);
+        tempObj["borderColor"] = "rgb(" + colorArr[4]+ ", " + colorArr[5] + ", " + colorArr[6] + ", " + 1.0 + ")";
+        tempObj["label"] = node;
+        if(count == 0) {
+          myChartObj["datasets"] = [tempObj];
+        }
+        else{
+          myChartObj["datasets"].push(tempObj);
+        }
+        count++;
+      }
+
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+        data : myChartObj,
+        // Configuration options go here
+        options: {},
+      });
+  }
 }
 
 setInterval(init, 1000*10);

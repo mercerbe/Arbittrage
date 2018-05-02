@@ -64,68 +64,8 @@ $(document).ready(function() {
     });
 
 
-  //CRYPTONATOR()
-  //Cryptonator API key: url: https://www.cryptonator.com/api/full/btc-usd
-  //Basic Ajax (Full info)
-  $.ajax({
-      url: 'https://www.cryptonator.com/api/full/btc-usd',
-      type: 'GET',
-      dataType: 'json',
-    })
-    .done(function(response) {
-      console.log(response);
-      console.log("success: line 37 cryptonator full info");
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
+    console.log(database);
 
-
-
-  //CHART.JS()
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our chart
-    data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
-      datasets: [{
-          label: "CoinMarketCap",//exchanges
-          backgroundColor: 'rgba(48,180,112,0.3)',
-          borderColor: 'rgba(12, 12, 37, 1.0)',
-          data: [0, 10, 5, 2, 20, 30, 45],//price on exchange
-        },
-        {
-          label: "My Second dataset",
-          backgroundColor: 'rgba(252,177,21,0.3)',
-          borderColor: 'rgba(12, 12, 37, 1.0)',
-          data: [5, 15, 10, 20, 10, 50, 30],
-
-        }
-      ]
-    },
-
-    // Configuration options go here
-    options: {},
-  });
-
-
-
-  //initialize firebase (need new database here)
-  var config = {
-    apiKey: "AIzaSyBeUXt8Ne-jQCvwGpMkiyjI-JQVpyxA1Bg",
-    authDomain: "crypto-test-914be.firebaseapp.com",
-    databaseURL: "https://crypto-test-914be.firebaseio.com",
-    projectId: "crypto-test-914be",
-    storageBucket: "",
-    messagingSenderId: "310681455458"
-  };
-  firebase.initializeApp(config);
   //login modal
   //signIn
   var txtEmail = document.getElementById('txtEmail');
