@@ -11,6 +11,11 @@ var cryptoArrayById = [{"id": "BTC", "logo":"assets/images/bitcoin.png"}, {"id":
  {"id":"LSK", "logo":"assets/images/lisk.png"}, {"id":"ZEC", "logo":"assets/images/zcash.png"}, {"id":"XVG", "logo":"assets/images/verge.png"}, {"id":"STEEM", "logo":"assets/images/steem.png"}, {"id":"BCN", "logo":"assets/images/bytecoin-bcn.png"},
  {"id":"BTM", "logo":"assets/images/bytom.png"}, {"id":"NANO", "logo":"assets/images/nano.jpg"}, {"id":"BTCP", "logo":"assets/images/bitcoin-private.png"}];
 var exchangeArray = ["BitFinex", "Bitstamp", "Bittrex", "C-Cex", "Cex.io", "Exmo", "Hitbtc", "Kraken", "Livecoin", "Poloniex", "wexnz", "YoBit"];
+for (var i = 0; i < exchangeArray.length; i++) {
+   var exchangeFilter = $("<button class='btn btn-success filter'>");
+   exchangeFilter.text(exchangeArray[i]);
+   $(".sidenav").append(exchangeFilter);
+}
  //var exchangesBenWouldLikeToAdd = ["Binance", "Kucoin", "Coinbase"];
 let easyPaginate = document.getElementById("easyPaginate");
  //for loop for landing page coin images/Links
