@@ -17,11 +17,11 @@ body {
 }
 
 .jumbotron {
-  color: white;
   margin-bottom: 0;
   border-bottom: 2px solid rgb(116, 230, 85);
   z-index: 1;
   font-family: 'Suez One', serif;
+  padding: 0px;
 }
 
 .jumbotron h1 {
@@ -32,6 +32,7 @@ body {
 .jumbotron p {
   font-family: 'Suez One', serif;
   font-size: 22px;
+  color: black;
 }
 
 .navbar {

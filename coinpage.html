@@ -53,10 +53,22 @@
     </nav>
     <!--jumbotron-->
     <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Arbittrage</h1>
-        <p class="lead">Cryptocurrency Prices Across Multiple Exchanges</p>
-      </div>
+
+        <!--card for curency-->
+        <div class="card card-custom bg-white border-white">
+          <div class="card-custom-img" style="background-image: url('assets/images/cardBackground.jpg');"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" id="coinLogo" src="assets/images/bitcoin.png" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">Currency Name</h4>
+            <p class="card-text">Auto Load Data From API call (maybe coin market cap here)</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a href="#" class="btn btn-success">Add To Favorites</a>
+          </div>
+        </div>
+      
     </div>
     <!--ticker-->
     <!--<div style="font-family: Verdana, Tahoma, Arial, sans-serif;font-size: 10px;color: #C9C6BD;text-align: right;padding:0px 0px 0px 0px;margin: 0;width: 100%;border: 0px solid #444!important;">
@@ -93,21 +105,10 @@
 
     <!--sidebar filter-->
     <div class="mainContent">
+
       <div class="main" style="">
         <!--card for curency-->
-        <div class="card card-custom bg-white border-white">
-          <div class="card-custom-img" style="background-image: url('assets/images/cardBackground.jpg');"></div>
-          <div class="card-custom-avatar">
-            <img class="img-fluid" id="coinLogo" src="assets/images/bitcoin.png" alt="Avatar" />
-          </div>
-          <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Currency Name</h4>
-            <p class="card-text">Auto Load Data From API call (maybe coin market cap here)</p>
-          </div>
-          <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-primary">Website?</a>
-          </div>
-        </div>
+
       </div>
       <hr>
       <!--graph for currency-->

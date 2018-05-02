@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //backstretch
-  $(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
+  //$(".jumbotron").backstretch("https://media.giphy.com/media/3oEjI9ZALbbWcO1hpm/giphy.gif");
 
 
   //COINMARKETCAP()
