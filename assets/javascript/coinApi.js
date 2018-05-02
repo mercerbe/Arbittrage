@@ -17,6 +17,12 @@ let count = 0;
 let timer;
 let isDriver = false;
 
+var url_string = window.location.href; //window.location.href
+console.log(url_string);
+var url = new URL(url_string);
+var ticker = url.searchParams.get("ticker");
+console.log(ticker);
+
 function getlist() {
   return list;
 }
@@ -105,7 +111,7 @@ function init() {
         }).then(function(response){
             console.log(response["0"].price_usd);
             let price = parseInt(response["0"].price_usd);
-            postTradeValue("MarketCap",price,"BTC");
+            postTradeValue("MarketCap",price,ticker);
         });
         drawChart();
     }
@@ -117,7 +123,6 @@ function cryptonator(){
     $.ajax({
         url: queryURL,
         method:"GET"
-
     })
 
     .then(function(response){
@@ -135,33 +140,24 @@ function cryptonator(){
             var price = results[i].price;
             var market = results[i].market;
             var volume = results[i].volume;
-
-            // console.log(market);
-            // console.log(price);
-            // console.log(base);
-            // price = [parseFloat(price)];
-            // console.log(price);
             postTradeValue(market,price,base);
-            //database.ref().child("frogfrogfrog" + "/" + base + "/pricehistory/" + market).set([price]);
         }
-
-
     });
 
 }
 
 var ctx = document.getElementById('myChart').getContext('2d');
 
-function drawChart(currency) {
+function drawChart() {
     if(listSet){
       myChartObj = {};
       myChartObj["labels"] = list["labels"];
       let count = 0;
-      for(node in list["BTC"]["pricehistory"])
+      for(node in list[ticker]["pricehistory"])
       {
         let tempObj = {};
         tempObj["label"] = node;
-        let tempArr = list[currency]["pricehistory"][node];
+        let tempArr = list[ticker]["pricehistory"][node];
         let colorArr = [""];
         for(var l = 0; l < 7; l++)
         {
