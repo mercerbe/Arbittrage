@@ -9,19 +9,20 @@ var config = {
   };
 firebase.initializeApp(config);
 
-var database =  firebase.database();
-var listSet = false;
-var list;
-var myConnectionsRef = firebase.database().ref('users/count');
-let count = 0;
-let timer;
-let isDriver = false;
-
 var url_string = window.location.href; //window.location.href
 console.log(url_string);
 var url = new URL(url_string);
 var ticker = url.searchParams.get("ticker");
-console.log(ticker);
+
+var database =  firebase.database();
+var listSet = false;
+var list;
+var myConnectionsRef = firebase.database().ref('users/'+ticker);
+var coinConnectionsRef = firebase.database().ref('frogfrogfrog/'+ticker);
+let count = 0;
+let timer;
+let isDriver = false;
+var colors = [0];
 
 function getlist() {
   return list;
@@ -51,8 +52,8 @@ myConnectionsRef.on("value", function(snapshot) {
     }
 });
 
-database.ref().on("value", function(snapshot) {
-    list = snapshot.val().frogfrogfrog;
+coinConnectionsRef.on("value", function(snapshot) {
+    list = snapshot.val();
     listSet = true;
 });
 
@@ -61,18 +62,19 @@ function postTradeValue(market, price, base) {
         let values = getValuesIndex(base,market);
         let currentDate = getFormattedDate();
         console.log(currentDate);
-        let arrValues = list[base]["pricehistory"][market];
+        let arrValues = list["pricehistory"][market];
         let arrLabels;
         if(market == "MarketCap")
         {
             let labels = getLabelsIndex();
             arrLabels = list["labels"];
+            console.log(arrLabels);
             if(arrLabels.length > 49)
             {
               arrLabels.splice(0,1);
             }
             arrLabels.push(currentDate);
-            database.ref().child("frogfrogfrog"+ labels).set(arrLabels);
+            database.ref().child("frogfrogfrog/"+ ticker + labels).set(arrLabels);
         }
         if(arrValues.length > 49)
         {
@@ -153,21 +155,24 @@ function drawChart() {
       myChartObj = {};
       myChartObj["labels"] = list["labels"];
       let count = 0;
-      for(node in list[ticker]["pricehistory"])
+      for(node in list["pricehistory"])
       {
         let tempObj = {};
         tempObj["label"] = node;
-        let tempArr = list[ticker]["pricehistory"][node];
-        let colorArr = [""];
-        for(var l = 0; l < 7; l++)
-        {
-          colorArr.push(Math.floor(Math.random()*248));
-        }
-        console.log(colorArr);
+        let tempArr = list["pricehistory"][node];
         tempObj["data"] = tempArr;
-        tempObj["backgroundColor"] = "rgb(" + colorArr[1]+ ", " + colorArr[2] + ", " + colorArr[3] + ", " + 0.3 + ")";
+        if(colors.length < 6) {
+          let colorArr = [""];
+          for(var l = 0; l < 4; l++)
+          {
+            colorArr.push(Math.floor(Math.random()*248));
+          }
+          console.log(colorArr);
+          colors.push("rgba(" + colorArr[1]+ ", " + colorArr[2] + ", " + colorArr[3] + ", " + 0.3 + ")");
+        }
+        tempObj["backgroundColor"] = [colors[count+1]];
         console.log(tempObj["backgroundColor"]);
-        tempObj["borderColor"] = "rgb(" + colorArr[4]+ ", " + colorArr[5] + ", " + colorArr[6] + ", " + 1.0 + ")";
+        tempObj["borderColor"] = ["rgba(0, 0, 0, 1.0)"];
         tempObj["label"] = node;
         if(count == 0) {
           myChartObj["datasets"] = [tempObj];
@@ -175,7 +180,7 @@ function drawChart() {
         else{
           myChartObj["datasets"].push(tempObj);
         }
-        count++;
+        count = count + 1;
       }
 
       var chart = new Chart(ctx, {
