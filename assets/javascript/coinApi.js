@@ -1,4 +1,7 @@
-
+let coinObj = {
+    "BTC" : "bitcoin",
+    "XRP" : "ripple"
+}
 var config = {
     apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
     authDomain: "rock-paper-scissors-ee0a8.firebaseapp.com",
@@ -103,6 +106,7 @@ function getFormattedDate() {
 }
 
 function init() {
+    let coinName = getCoinName(ticker);
     var queryURL = "https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=USD"
     if(listSet && isDriver)
     {
@@ -120,7 +124,7 @@ function init() {
 }
 
 function cryptonator(){
-    var queryURL = 'https://api.cryptonator.com/api/full/btc-usd'
+    var queryURL = 'https://api.cryptonator.com/api/full/'+ticker+'-usd';
 
     $.ajax({
         url: queryURL,
@@ -191,6 +195,10 @@ function drawChart() {
         options: {},
       });
   }
+}
+
+function getCoinName(string) {
+    return coinObj[string];
 }
 
 setInterval(init, 1000*10);
