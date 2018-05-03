@@ -47,83 +47,87 @@ let easyPaginate = document.getElementById("easyPaginate");
    $(window).scrollTop(250);
  });
 
-//login modal
-
-//signIn
-var txtEmail = document.getElementById('txtEmail');
-var txtPass = document.getElementById('txtPass');
-var btnLogin = document.getElementById('btnLogin');
-var btnSignup = document.getElementById('btnSignup');
-var btnLogout = document.getElementById('btnLogout');
-var btnShowModal = document.getElementById('btnShowModal');
-
-//login
-btnLogin.addEventListener('click', e => {
-//get email and pass
-var email = txtEmail.value;
-var pass = txtPass.value;
-var auth = firebase.auth();
-//sign in
-var promise = auth.signInWithEmailAndPassword(email, pass);
-promise.catch(e => console.log(e.message));
-promise.catch(e => alert("Not signed up. Please sign up first!"));
-
-})
-
-//sign up
-btnSignup.addEventListener('click', e => {
-var email = txtEmail.value;
-var pass = txtPass.value;
-var auth = firebase.auth();
-console.log("click");
-//sign in
-var promise = auth.createUserWithEmailAndPassword(email, pass);
-promise.catch(e => console.log(e.message));
-})
-
-//real time auth listener
-firebase.auth().onAuthStateChanged(firebaseUser => {
-if (firebaseUser) {
-   console.log(firebaseUser);
-   $("#modal").modal('hide');
-} else {
-   console.log("not logged in");
-}
-})
-//logout
-btnLogout.addEventListener('click', e => {
-firebase.auth().signOut();
-setTimeout(function() {
-   $("#modal").modal('show');
-}, 1000);
-
-})
-//show modal
-btnShowModal.addEventListener('click', e => {
-console.log("click");
-setTimeout(function() {
-   $("#modal").modal('show');
-}, 100);
-})
+// //login modal
+//
+// //signIn
+// var txtEmail = document.getElementById('txtEmail');
+// var txtPass = document.getElementById('txtPass');
+// var btnLogin = document.getElementById('btnLogin');
+// var btnSignup = document.getElementById('btnSignup');
+// var btnLogout = document.getElementById('btnLogout');
+// var btnShowModal = document.getElementById('btnShowModal');
+//
+// //login
+// btnLogin.addEventListener('click', e => {
+// //get email and pass
+// var email = txtEmail.value;
+// var pass = txtPass.value;
+// var auth = firebase.auth();
+// //sign in
+// var promise = auth.signInWithEmailAndPassword(email, pass);
+// promise.catch(e => console.log(e.message));
+// promise.catch(e => alert("Not signed up. Please sign up first!"));
+//
+// })
+//
+// //sign up
+// btnSignup.addEventListener('click', e => {
+// var email = txtEmail.value;
+// var pass = txtPass.value;
+// var auth = firebase.auth();
+// console.log("click");
+// //sign in
+// var promise = auth.createUserWithEmailAndPassword(email, pass);
+// promise.catch(e => console.log(e.message));
+// })
+//
+// //real time auth listener
+// firebase.auth().onAuthStateChanged(firebaseUser => {
+// if (firebaseUser) {
+//    console.log(firebaseUser);
+//    $("#modal").modal('hide');
+// } else {
+//    console.log("not logged in");
+// }
+// })
+// //logout
+// btnLogout.addEventListener('click', e => {
+// firebase.auth().signOut();
+// setTimeout(function() {
+//    $("#modal").modal('show');
+// }, 1000);
+//
+// })
+// //show modal
+// btnShowModal.addEventListener('click', e => {
+// console.log("click");
+// setTimeout(function() {
+//    $("#modal").modal('show');
+// }, 100);
+// })
 
 //search coins
-$(".searchCoins").on("click", function() {
-   var input, filter, ul, li, a, i;
-   input = document.getElementById(searchTicker);
+$("#searchTicker").keyup(function(event) {
+
+   var input, filter, coinlist, coindata, a, i;
+   input = document.getElementById("searchTicker");
    filter = input.value.toUpperCase();
    console.log(filter);
-   ul = document.getElementById(easyPaginate);
-   li = ul.a.img.querySelector("data");
-   for (var i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-         li[i].style.display = "";
-
-      }else {
-         li[i].style.display = "none";
+   coinlist = document.getElementById('easyPaginate');
+   coindata = coinlist.getElementsByTagName("a");
+   for (var i = 0; i < coindata.length; i++) {
+      a = coindata[i].getElementsByTagName("img");
+      var data = $(".coinImg").attr('data');
+      console.log(data);
+      if (data.indexOf(filter) > -1) {
+         coindata[i].style.display = "";
+      } else {
+         coindata[i].style.display = "none";
       }
    }
+});
 
 
-})
+
+
  });
