@@ -59,8 +59,8 @@ $("#searchTicker").keyup(function(event) {
    console.log(coindata);
    for (var i = 0; i < coindata.length; i++) {
       a = coindata[i].getElementsByTagName("img");
-      var data = $(".coinImg").attr('data');
-      //TODO- data seems to be only the first coin's data attr
+      var data = $(".coinImg").get(i);
+      data = data.getAttribute("data");
       //console.log(data);
       if (data.indexOf(filter) > -1) {
          coindata[i].style.display = "";
