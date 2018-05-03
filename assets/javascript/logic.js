@@ -21,7 +21,15 @@ $(document).ready(function() {
     });
 
 
-  console.log(database);
+    var config = {
+        apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
+        authDomain: "rock-paper-scissors-ee0a8.firebaseapp.com",
+        databaseURL: "https://rock-paper-scissors-ee0a8.firebaseio.com",
+        projectId: "rock-paper-scissors-ee0a8",
+        storageBucket: "rock-paper-scissors-ee0a8.appspot.com",
+        messagingSenderId: "976577585931"
+      };
+    firebase.initializeApp(config);
 
   //login modal
   //signIn
@@ -81,7 +89,7 @@ $(document).ready(function() {
     }, 100);
   })
 
-  
+
 });
 
 //
