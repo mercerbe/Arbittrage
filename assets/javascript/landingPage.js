@@ -56,12 +56,12 @@ $("#searchTicker").keyup(function(event) {
    console.log(filter);
    coinlist = document.getElementById('easyPaginate');
    coindata = coinlist.getElementsByTagName("a");
+   console.log(coindata);
    for (var i = 0; i < coindata.length; i++) {
       a = coindata[i].getElementsByTagName("img");
-      console.log(a);
       var data = $(".coinImg").attr('data');
       //TODO- data seems to be only the first coin's data attr
-      console.log(data);
+      //console.log(data);
       if (data.indexOf(filter) > -1) {
          coindata[i].style.display = "";
       } else {

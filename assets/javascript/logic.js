@@ -11,6 +11,17 @@ $(document).ready(function() {
     })
     .done(function(response) {
       console.log(response);
+      //load card info from API call
+      for (var i = 0; i < response.length; i++) {
+      var coinLogo, coinName, volume, percentChange, priceBTC;
+      coinLogo = $("<img class='img-fluid'>");
+      coinName = $("<p class='name'>");
+      volume = $("<p class='volume'>");
+      percentChange = $("<p class='change'>");
+      priceBTC = $("<p class'priceBTC'>");
+      
+      }
+
       console.log("success: line 17 coinmarketcap ticker info");
     })
     .fail(function() {
@@ -91,5 +102,3 @@ $(document).ready(function() {
 
 
 });
-
-//

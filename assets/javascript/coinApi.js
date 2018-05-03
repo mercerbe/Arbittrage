@@ -1,6 +1,12 @@
 let coinObj = {
     "BTC" : "bitcoin",
-    "XRP" : "ripple"
+    "ETH" : "ethereum",
+    "XRP" : "ripple",
+    "BCH" : "bitcoin-cash",
+    "EOS" : "eos",
+    "LTC" : "litecoin",
+    "ADA" : "cardano",
+    "XLM" : "stellar"
 }
 var config = {
     apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
