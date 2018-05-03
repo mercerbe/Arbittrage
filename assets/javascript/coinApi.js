@@ -19,7 +19,6 @@ var config = {
 firebase.initializeApp(config);
 
 var url_string = window.location.href; //window.location.href
-console.log(url_string);
 var url = new URL(url_string);
 var ticker = url.searchParams.get("ticker");
 
@@ -38,11 +37,9 @@ function getlist() {
 }
 
 function setDriver() {
-    console.log("in here 1");
     if(count > 0) {
         isDriver = true;
         count = count - 1;
-        console.log("Count is now: " + count);
         myConnectionsRef.set(count);
     }
 }
@@ -63,6 +60,10 @@ myConnectionsRef.on("value", function(snapshot) {
 
 coinConnectionsRef.on("value", function(snapshot) {
     list = snapshot.val();
+    if(!listSet) {
+      $("#coinLogo").attr("src",list.img);
+      $("#currencyName").text(coinObj[ticker]);
+    }
     listSet = true;
 });
 
@@ -70,14 +71,12 @@ function postTradeValue(market, price, base) {
     if(isDriver) {
         let values = getValuesIndex(base,market);
         let currentDate = getFormattedDate();
-        console.log(currentDate);
         let arrValues = list["pricehistory"][market];
         let arrLabels;
         if(market == "MarketCap")
         {
             let labels = getLabelsIndex();
             arrLabels = list["labels"];
-            console.log(arrLabels);
             if(arrLabels.length > 49)
             {
               arrLabels.splice(0,1);
@@ -90,7 +89,6 @@ function postTradeValue(market, price, base) {
             arrValues.splice(0,1);
         }
         arrValues.push(price);
-        console.log(arrValues);
         database.ref().child("frogfrogfrog" + values).set(arrValues);
     }
 }
@@ -121,7 +119,15 @@ function init() {
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response["0"].price_usd);
+            console.log("Bebbop",response);
+            if($("#volume").text() == "" || $("#rank").text() == "" || $("#change").text() == "") {
+              let volume = response["0"]["24h_volume_usd"];
+              let rank =response["0"].rank;
+              let change = response[0].percent_change_24h;
+              $("#volume").text(`24 hour volume: ${volume}`);
+              $("#rank").text(`Rank: ${rank}`);
+              $("#change").text(`24 Hour Percent Change: ${change}`);
+            }
             let price = parseInt(response["0"].price_usd);
             postTradeValue("MarketCap",price,ticker);
         });
@@ -138,8 +144,6 @@ function cryptonator(){
     })
 
     .then(function(response){
-       console.log(response);
-
         var results = response.ticker.markets;
         let base = response.ticker.base;
         let max = 5;
@@ -177,11 +181,9 @@ function drawChart() {
           {
             colorArr.push(Math.floor(Math.random()*248));
           }
-          console.log(colorArr);
           colors.push("rgba(" + colorArr[1]+ ", " + colorArr[2] + ", " + colorArr[3] + ", " + 0.3 + ")");
         }
         tempObj["backgroundColor"] = [colors[count+1]];
-        console.log(tempObj["backgroundColor"]);
         tempObj["borderColor"] = ["rgba(0, 0, 0, 1.0)"];
         tempObj["label"] = node;
         if(count == 0) {

@@ -19,8 +19,6 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
   <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-  <!-- Moment.js-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
   <!--chart.js-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
   <title>Coin</title>
@@ -54,11 +52,13 @@
         <div class="card card-custom bg-white border-white">
           <div class="card-custom-img" style="background-image: url('assets/images/cardBackground.jpg');"></div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" id="coinLogo" src="assets/images/bitcoin.png" alt="Avatar" />
+            <img class="img-fluid" id="coinLogo" src="" alt="Avatar" />
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Currency Name</h4>
-            <p class="card-text">Auto Load Data From API call (maybe coin market cap here)</p>
+            <h1 class="card-title" id="currencyName"></h2>
+            <p class="card-text" id="volume"></p>
+            <p class="card-text" id="rank"></p>
+            <p id="change" class="card-text"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
             <a href="#" class="btn btn-success">Add To Favorites</a>
@@ -166,8 +166,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!--paginate.js-->
-    <script src="jquery.easyPaginate/lib/jquery.easyPaginate.js"></script>
     <!--backstretch-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     <!--custom javascript-->
