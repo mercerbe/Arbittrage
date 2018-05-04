@@ -45,7 +45,7 @@ $(document).ready(function() {
       "id": "DASH",
       "logo": "assets/images/dash.png"
     }, {
-      "id": "NEM",
+      "id": "XEM",
       "logo": "assets/images/nem.png"
     },
     {

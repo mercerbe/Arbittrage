@@ -12,7 +12,7 @@ let coinObj = {
     "TRX" : "tron",
     "XMR" : "monero",
     "DASH" : "dash",
-    "NEM" : "nem",
+    "XEM" : "nem",
     "USDT" : "tether",
     "ETC" : "ethereum-classic",
     "VEN" : "vechain",
@@ -106,7 +106,6 @@ btnShowModal.addEventListener('click', e => {
 var url_string = window.location.href; //window.location.href
 var url = new URL(url_string);
 var ticker = url.searchParams.get("ticker");
-
 var database =  firebase.database();
 var listSet = false;
 var list;
@@ -204,14 +203,16 @@ function init() {
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log("Bebbop",response);
+            console.log("ticker",response);
             if($("#volume").text() == "" || $("#rank").text() == "" || $("#change").text() == "") {
               let volume = response["0"]["24h_volume_usd"];
               let rank =response["0"].rank;
               let change = response[0].percent_change_24h;
-              $("#volume").text(`24 hour volume: ${volume}`);
+              let btcprice = response[0].price_btc;
+              $("#volume").text(`24 Hour Volume: $${volume}`);
               $("#rank").text(`Rank: ${rank}`);
-              $("#change").text(`24 Hour Percent Change: ${change}`);
+              $("#change").text(`24 Hour Change: ${change} %`);
+              $("#btcprice").text(`Price (In BTC): ${btcprice}`);
             }
             let price = parseInt(response["0"].price_usd);
             postTradeValue("MarketCap",price,ticker);
@@ -229,6 +230,7 @@ function cryptonator(){
     })
 
     .then(function(response){
+        console.log("full",response);
         var results = response.ticker.markets;
         let base = response.ticker.base;
         let max = 12;
@@ -260,9 +262,9 @@ function drawChart() {
         tempObj["label"] = node;
         let tempArr = list["pricehistory"][node];
         tempObj["data"] = tempArr;
-        if(colors.length < 6) {
+        if(colors.length < 12) {
           let colorArr = [""];
-          for(var l = 0; l < 4; l++)
+          for(var l = 0; l < 10; l++)
           {
             colorArr.push(Math.floor(Math.random()*248));
           }
