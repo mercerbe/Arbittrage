@@ -32,6 +32,7 @@ body {
 .jumbotron h1 {
   font-size: 60px;
   padding-bottom: 10px;
+  text-shadow: 2px 2px 1px black;
 }
 
 .jumbotron h2 {
@@ -39,6 +40,7 @@ body {
   font-size: 22px;
   color: white;
   padding-bottom: 180px;
+  text-shadow: 2px 2px 1px black;
 }
 
 .navbar {
@@ -54,11 +56,21 @@ body {
   margin-left: 15px;
 }
 
-.navbar-toggler {}
+.navbar i {
+  color: white;
+}
 
 .main {
-  padding: 0px 10px;
+  padding: 0px 10px 20px 0px;
   margin-left: 160px;
+  font-family: 'Suez One', serif;
+}
+
+.mainContent h2 {
+  font-family: 'Suez One', serif;
+  color: rgba(12, 12, 37, 1.0);
+  text-decoration: underline;
+  text-shadow: 2px 2px 1px rgb(48, 180, 112);
 }
 
 .sidenav {
@@ -128,6 +140,7 @@ body {
 #easyPaginate {
   border: 0px solid black;
   margin-left: -30px;
+  width: auto;
 }
 
 #easyPaginate img {
@@ -143,11 +156,13 @@ body {
   width: 200px;
   float: left;
   margin-left: -30px;
+  color: rgba(12, 12, 37, 1.0);
 }
 
 .easyPaginateNav a {
   padding:5px;
   font-size: 25px;
+  color: rgba(12, 12, 37, 1.0);
 }
 
 .easyPaginateNav a.current {

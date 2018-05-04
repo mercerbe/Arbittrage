@@ -6,7 +6,33 @@ let coinObj = {
     "EOS" : "eos",
     "LTC" : "litecoin",
     "ADA" : "cardano",
-    "XLM" : "stellar"
+    "XLM" : "stellar",
+    "IOTA" : "iota",
+    "NEO" : "neo",
+    "TRX" : "tron",
+    "XMR" : "monero",
+    "DASH" : "dash",
+    "NEM" : "nem",
+    "USDT" : "tether",
+    "ETC" : "ethereum-classic",
+    "VEN" : "vechain",
+    "OMG" : "omisego",
+    "QTUM" : "qtum",
+    "BNB" : "binance-coin",
+    "ICX" : "icon",
+    "BTG" : "bitcoin-gold",
+    "LSK" : "lisk",
+    "ZEC" : "zcash",
+    "XVG" : "verge",
+    "STEEM" : "steem",
+    "BCN" : "bytecoin-bcn",
+    "BTM" : "bytom",
+    "NANO" : "nano",
+    "BTCP" : "bitcoin-private",
+    //new coins to be added (as top 30 changes)
+    "ONT" : "ontology",
+    "AE" : "aeternity",
+    "WAN" : "wanchain",
 }
 var config = {
     apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
@@ -48,6 +74,7 @@ btnSignup.addEventListener('click', e => {
   console.log("click");
   //sign in
   var promise = auth.createUserWithEmailAndPassword(email, pass);
+  console.log(email, pass);
   promise.catch(e => console.log(e.message));
 })
 
@@ -204,7 +231,7 @@ function cryptonator(){
     .then(function(response){
         var results = response.ticker.markets;
         let base = response.ticker.base;
-        let max = 5;
+        let max = 12;
 
         if(max > results.length) {
             max = results.length;

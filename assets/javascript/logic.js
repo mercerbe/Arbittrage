@@ -66,7 +66,7 @@ $(document).ready(function() {
     var email = txtEmail.value;
     var pass = txtPass.value;
     var auth = firebase.auth();
-    console.log("click");
+    console.log("Login/Signup Clicked");
     //sign in
     var promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
@@ -91,7 +91,7 @@ $(document).ready(function() {
   })
   //show modal
   btnShowModal.addEventListener('click', e => {
-    console.log("click");
+    console.log("Login/signup Clicked");
     setTimeout(function() {
       $("#modal").modal('show');
     }, 100);
