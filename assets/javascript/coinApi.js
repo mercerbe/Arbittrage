@@ -214,7 +214,7 @@ function init() {
               $("#change").text(`24 Hour Change: ${change} %`);
               $("#btcprice").text(`Price (In BTC): ${btcprice}`);
             }
-            let price = parseInt(response["0"].price_usd);
+            let price = response["0"].price_usd;
             postTradeValue("MarketCap",price,ticker);
         });
         drawChart();
