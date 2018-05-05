@@ -115,6 +115,21 @@ body {
   height: 100px;
 }
 
+.favoritesBtn {
+  float: right;
+}
+
+.calculator {
+  clear: both;
+  text-align: center;
+}
+
+.calculator p, iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .news {
   clear: both;
   position: relative;
@@ -126,6 +141,7 @@ body {
 
 .chartContainer {
   margin-top: 10%;
+  margin-bottom: 40px;
 }
 
 /*footer*/

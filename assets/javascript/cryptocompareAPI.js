@@ -1,18 +1,32 @@
-function cryptocompare() {
+function cryptoCompare() {
+  //let coinName = getCoinName(ticker);
+  var queryURL = 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=' + ticker + '&tsym=BTC';
+
   $.ajax({
-    url: 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=' + ticker + '&tsym=BTC',
-    type: 'GET',
-  })
-  .done(function(response) {
-    let ticker;
-    console.log(response);
-    console.log("success");
-  })
-  .fail(function() {
-    console.log("error");
-  })
-  .always(function() {
-    console.log("complete");
-  });
+      url: queryURL,
+      method: 'GET'
+    })
+    .done(function(response) {
+      console.log("Compare ticker: ", response);
+      var results;
+      let base;
+      let max;
+
+      if (max > results.length) {
+        max = results.length;
+      }
+      for (var i = 0; i < max; i++) {
+        var price;
+        var market;
+        var volume;
+        postTradeValue(market, price, base);
+      }
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
 
 }

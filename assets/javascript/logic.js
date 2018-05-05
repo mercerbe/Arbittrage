@@ -10,12 +10,12 @@ $(document).ready(function() {
       console.log(response);
       //load card info from API call
       for (var i = 0; i < response.length; i++) {
-      var coinLogo, coinName, volume, percentChange, priceBTC;
-      coinLogo = $("<img class='img-fluid'>");
-      coinName = $("<p class='name'>");
-      volume = $("<p class='volume'>");
-      percentChange = $("<p class='change'>");
-      priceBTC = $("<p class'priceBTC'>");
+        var coinLogo, coinName, volume, percentChange, priceBTC;
+        coinLogo = $("<img class='img-fluid'>");
+        coinName = $("<p class='name'>");
+        volume = $("<p class='volume'>");
+        percentChange = $("<p class='change'>");
+        priceBTC = $("<p class'priceBTC'>");
 
       }
 
@@ -29,15 +29,15 @@ $(document).ready(function() {
     });
 
 
-    var config = {
-        apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
-        authDomain: "rock-paper-scissors-ee0a8.firebaseapp.com",
-        databaseURL: "https://rock-paper-scissors-ee0a8.firebaseio.com",
-        projectId: "rock-paper-scissors-ee0a8",
-        storageBucket: "rock-paper-scissors-ee0a8.appspot.com",
-        messagingSenderId: "976577585931"
-      };
-    firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyAxChRCllQhEMrEPSPyFb3ImjXy9lZ6Qf8",
+    authDomain: "rock-paper-scissors-ee0a8.firebaseapp.com",
+    databaseURL: "https://rock-paper-scissors-ee0a8.firebaseio.com",
+    projectId: "rock-paper-scissors-ee0a8",
+    storageBucket: "rock-paper-scissors-ee0a8.appspot.com",
+    messagingSenderId: "976577585931"
+  };
+  firebase.initializeApp(config);
 
   //login modal
   //signIn

@@ -48,21 +48,21 @@
     <!--jumbotron-->
     <div class="jumbotron jumbotron-fluid">
 
-        <!--card for curency-->
-        <div class="card card-custom bg-white border-white">
-          <div class="card-custom-img" style="background-image: url('assets/images/coinimgcut.jpg');"></div>
-          <div class="card-custom-avatar">
-            <img class="img-fluid" id="coinLogo" src="" alt="Avatar" />
-          </div>
-          <div class="card-body" style="overflow-y: auto">
-            <h1 class="card-title" id="currencyName"></h2>
+      <!--card for curency-->
+      <div class="card card-custom bg-white border-white">
+        <div class="card-custom-img" style="background-image: url('assets/images/coinimgcut.jpg');"></div>
+        <div class="card-custom-avatar">
+          <img class="img-fluid" id="coinLogo" src="" alt="Avatar" />
+        </div>
+        <div class="card-body" style="overflow-y: auto">
+          <h1 class="card-title" id="currencyName"></h2>
             <p class="card-text" id="rank"></p>
             <p class="card-text" id="volume"></p>
             <p class="card-text" id="change"></p>
             <p class="card-text" id="btcprice"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-success">Add To Favorites</a>
+            <a href="" class="btn btn-success favoritesBtn">Add To Favorites</a>
           </div>
         </div>
 
@@ -112,7 +112,13 @@
       <div class="container chartContainer">
         <canvas id="myChart" width="300" height="300">
 
-    </canvas>
+        </canvas>
+      </div>
+
+      <!--calculator-->
+      <div class="container-fluid calculator">
+        <p style="font-family: 'Suez One', serif;">Calculate Opporunities: </p>
+        <iframe width="219" height="302" src="http://www.calculator-1.com/outdoor/?f=0c0c25&r=30b470" scrolling="no" frameborder="0"></iframe>
       </div>
       <!--footer-->
       <section id="footer">
