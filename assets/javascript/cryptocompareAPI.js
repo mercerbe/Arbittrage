@@ -1,6 +1,7 @@
+$.cors('https://www.cryptocompare.com/api/data/top/exchangess/full/?fsym=' + ticker + '&tsym=BTC', function (data) {
 function cryptoCompare() {
   //let coinName = getCoinName(ticker);
-  var queryURL = 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=' + ticker + '&tsym=BTC';
+  var queryURL = 'https://www.cryptocompare.com/api/data/top/exchangess/full/?fsym=' + ticker + '&tsym=BTC';
 
   $.ajax({
       url: queryURL,
@@ -30,3 +31,4 @@ function cryptoCompare() {
     });
 
 }
+});

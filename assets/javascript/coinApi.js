@@ -195,7 +195,7 @@ function init() {
   var queryURL = "https://api.coinmarketcap.com/v1/ticker/" + coinName + "/?convert=USD";
   if (listSet && isDriver) {
     cryptonator();
-    cryptoCompare();
+    //cryptoCompare();
     $.ajax({
       url: queryURL,
       method: "GET"
