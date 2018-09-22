@@ -142,7 +142,7 @@ $(document).ready(function() {
     input = document.getElementById("searchTicker");
     filter = input.value.toUpperCase();
     console.log("search filter: " + filter);
-    coinlist = document.getElementById('easyPaginate');
+    coinlist = document.getElementById('mainGallery');
     coindata = coinlist.getElementsByTagName("a");
     for (var i = 0; i < coindata.length; i++) {
       a = coindata[i].getElementsByTagName("img");
